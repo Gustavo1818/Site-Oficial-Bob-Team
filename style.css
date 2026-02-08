@@ -1,0 +1,506 @@
+/* =========================================================
+CT BOB TEAM — ULTRA PREMIUM ++
+Estética: Dark Luxury / Martial Arts / Cinematic
+========================================================= */
+
+/* =========================================================
+RESET PROFISSIONAL
+========================================================= */
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+overflow-x: hidden;
+}
+
+body {
+font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+background:
+radial-gradient(circle at 20% 0%, #111 0%, #000 60%),
+#000;
+color: #ffffff;
+line-height: 1.7;
+letter-spacing: 0.2px;
+}
+
+/* =========================================================
+VARIÁVEIS — IDENTIDADE DE MARCA
+========================================================= */
+
+:root {
+--black-pure: #000000;
+--black-deep: #050505;
+--black-soft: #0c0c0c;
+--black-card: #111111;
+
+--red-main: #c40000;  
+--red-glow: #ff2e2e;  
+--red-dark: #7a0000;  
+
+--white-main: #ffffff;  
+--gray-light: #d5d5d5;  
+--gray-medium: #9b9b9b;  
+--gray-dark: #2a2a2a;  
+
+--shadow-soft: 0 12px 30px rgba(0,0,0,0.6);  
+--shadow-hard: 0 35px 70px rgba(0,0,0,0.9);  
+--shadow-red: 0 0 25px rgba(196,0,0,0.25);  
+
+--transition-fast: 0.25s ease;  
+--transition-smooth: 0.45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+/* =========================================================
+LOADING — CINEMA
+========================================================= */
+
+#loading {
+position: fixed;
+inset: 0;
+background: linear-gradient(180deg, #000, #0a0a0a);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+
+.loader-ring {
+width: 68px;
+height: 68px;
+border: 6px solid #1f1f1f;
+border-top: 6px solid var(--red-main);
+border-radius: 50%;
+animation: spin 0.85s linear infinite;
+margin-bottom: 20px;
+box-shadow: var(--shadow-red);
+}
+
+#loading span {
+font-weight: 700;
+letter-spacing: 6px;
+font-size: 0.8rem;
+opacity: 0.85;
+}
+
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+HEADER — LUXO DISCRETO
+========================================================= */
+
+.header {
+position: fixed;
+top: 0;
+width: 100%;
+height: 80px;
+padding: 0 40px;
+background: rgba(5,5,5,0.88);
+backdrop-filter: blur(12px);
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+z-index: 1000;
+}
+
+.logo-area {
+display: flex;
+align-items: center;
+gap: 16px;
+}
+
+.logo-area img {
+width: 54px;
+filter: drop-shadow(0 0 10px rgba(196,0,0,0.35));
+}
+
+.logo-text strong {
+font-size: 1.15rem;
+letter-spacing: 1px;
+}
+
+.logo-text small {
+font-size: 0.7rem;
+color: var(--gray-medium);
+letter-spacing: 2px;
+}
+
+/* =========================================================
+MENU — PRECISÃO
+========================================================= */
+
+.menu {
+display: flex;
+gap: 30px;
+}
+
+.menu a {
+text-decoration: none;
+color: var(--white-main);
+font-size: 0.82rem;
+letter-spacing: 2px;
+position: relative;
+padding: 6px 0;
+transition: color var(--transition-fast);
+}
+
+.menu a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: -8px;
+width: 0%;
+height: 2px;
+background: linear-gradient(90deg, var(--red-main), var(--red-glow));
+transition: width var(--transition-smooth);
+}
+
+.menu a:hover {
+color: var(--red-glow);
+}
+
+.menu a:hover::after {
+width: 100%;
+}
+
+.menu-toggle {
+display: none;
+background: none;
+border: none;
+font-size: 2rem;
+color: var(--white-main);
+}
+
+/* =========================================================
+HERO — CINEMATOGRÁFICO REAL
+========================================================= */
+
+.hero {
+min-height: 100vh;
+padding: 150px 20px 90px;
+display: flex;
+align-items: center;
+background:
+linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.95));
+}
+
+.hero-content {
+max-width: 980px;
+margin: auto;
+}
+
+.hero-eyebrow {
+font-size: 0.7rem;
+letter-spacing: 5px;
+color: var(--red-glow);
+font-weight: 700;
+}
+
+.hero h1 {
+font-size: clamp(2.6rem, 5vw, 3.6rem);
+line-height: 1.12;
+margin: 28px 0;
+}
+
+.hero p {
+max-width: 680px;
+color: var(--gray-light);
+font-size: 1.05rem;
+}
+
+/* =========================================================
+STATS — PESO VISUAL
+========================================================= */
+
+.hero-stats {
+display: flex;
+gap: 60px;
+margin: 52px 0;
+}
+
+.hero-stats strong {
+font-size: 2.6rem;
+color: var(--red-main);
+text-shadow: 0 0 18px rgba(196,0,0,0.25);
+}
+
+.hero-stats span {
+font-size: 0.72rem;
+letter-spacing: 2px;
+color: var(--gray-medium);
+}
+
+/* =========================================================
+BOTÃO — LUXO CONTIDO
+========================================================= */
+
+.btn-primary {
+padding: 18px 42px;
+background: linear-gradient(135deg, var(--red-main), var(--red-dark));
+color: var(--white-main);
+text-decoration: none;
+font-weight: 800;
+letter-spacing: 2px;
+border-radius: 6px;
+box-shadow: 0 18px 40px rgba(196,0,0,0.45);
+transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-primary:hover {
+transform: translateY(-4px);
+box-shadow: 0 26px 60px rgba(196,0,0,0.65);
+}
+
+/* =========================================================
+SEÇÕES — RITMO VISUAL
+========================================================= */
+
+.section {
+padding: 120px 20px;
+max-width: 1300px;
+margin: auto;
+}
+
+.section-dark {
+background: linear-gradient(180deg, #0a0a0a, #000);
+max-width: none;
+}
+
+.section h2 {
+text-align: center;
+font-size: 2.3rem;
+margin-bottom: 70px;
+position: relative;
+}
+
+.section h2::after {
+content: "";
+width: 70px;
+height: 3px;
+background: linear-gradient(90deg, var(--red-main), var(--red-glow));
+display: block;
+margin: 22px auto 0;
+}
+
+.center-text {
+max-width: 860px;
+margin: auto;
+text-align: center;
+color: var(--gray-light);
+}
+
+/* =========================================================
+CARDS — ALTO PADRÃO
+========================================================= */
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+gap: 40px;
+}
+
+.card {
+background: linear-gradient(180deg, #141414, #0b0b0b);
+padding: 40px 30px;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,0.06);
+box-shadow: var(--shadow-soft);
+transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.card:hover {
+transform: translateY(-12px);
+box-shadow: var(--shadow-hard);
+}
+
+.card h3,
+.card strong {
+margin: 18px 0;
+font-size: 1.25rem;
+}
+
+.card p,
+.card small {
+color: var(--gray-medium);
+}
+
+/* =========================================================
+CRONOGRAMA — LIMPO E FIRME
+========================================================= */
+
+.schedule-wrapper {
+overflow-x: auto;
+}
+
+.schedule {
+width: 100%;
+min-width: 760px;
+border-collapse: collapse;
+}
+
+.schedule th {
+background: var(--red-main);
+padding: 18px;
+letter-spacing: 1px;
+}
+
+.schedule td {
+padding: 16px;
+background: var(--black-card);
+border: 1px solid var(--gray-dark);
+}
+
+/* =========================================================
+CONTATO — CLAREZA
+========================================================= */
+
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 46px;
+text-align: center;
+}
+
+.contact-grid h3 {
+margin-bottom: 14px;
+}
+
+.contact-grid a {
+color: var(--red-glow);
+font-weight: 700;
+text-decoration: none;
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+footer {
+padding: 40px;
+background: #000;
+text-align: center;
+font-size: 0.75rem;
+color: var(--gray-medium);
+letter-spacing: 1.5px;
+}
+
+/* =========================================================
+RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+
+.menu {  
+    position: fixed;  
+    top: 80px;  
+    right: -280px;  
+    width: 280px;  
+    height: 100vh;  
+    background: var(--black-deep);  
+    flex-direction: column;  
+    padding: 40px;  
+    transition: right var(--transition-smooth);  
+}  
+
+.menu.active {  
+    right: 0;  
+}  
+
+.menu-toggle {  
+    display: block;  
+}  
+
+.hero-stats {  
+    flex-direction: column;  
+    gap: 26px;  
+}
+
+}
+
+/* =========================================================
+AGREGAÇÕES — GALERIA E VÍDEO
+========================================================= */
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 26px;
+margin-top: 60px;
+}
+
+.gallery-grid img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,0.06);
+box-shadow: var(--shadow-soft);
+transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.gallery-grid img:hover {
+transform: scale(1.04);
+box-shadow: var(--shadow-hard);
+}
+
+.gallery-video {
+margin-top: 80px;
+display: flex;
+justify-content: center;
+}
+
+.gallery-video video {
+width: 100%;
+max-width: 960px;
+border-radius: 18px;
+border: 1px solid rgba(255,255,255,0.08);
+box-shadow: 0 40px 80px rgba(0,0,0,0.85);
+background: #000;
+}
+
+@media (max-width: 768px) {
+.gallery-grid {
+gap: 18px;
+}
+
+.gallery-video video {  
+    border-radius: 12px;  
+}
+
+}
+
+/* =========================================================
+FIX DEFINITIVO — REVEAL FAILSAFE
+(GARANTE QUE NADA SUMA SE O JS FALHAR)
+========================================================= */
+
+.reveal {
+opacity: 1 !important;
+transform: none !important;
+}
+
+.reveal.active {
+opacity: 1 !important;
+transform: none !important;
+}
+html, body {
+    overflow-x: hidden;
+}
+
+/* === FIX CLIQUE INSTAGRAM === */
+.instagram-link {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999;
+}
